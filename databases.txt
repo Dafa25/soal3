@@ -1,0 +1,27 @@
+create table produk (
+id serial primary KEY,
+nama_produk varchar(225),
+harga numeric,
+deskripsi
+);
+
+insert into product (name_product, price, description) values 
+('Kaos', 100.000, 'this is product'),
+('Kemeja black', 200.000, 'this is product'),
+('Sweeter grey', 300.000, 'this is product'),
+('Cino pants', 200.000, 'this is product'),
+('Hoodie', 500.000, 'this is product');
+
+
+create table review (
+id serial primary key,
+product_id int,
+review text
+);
+
+insert into review (product_id, review) values 
+(001, 'bagus'),
+(002, 'bahannya bagus'),
+(003, 'tahan lama'),
+(004, 'keren'),
+(005, 'suka banget sama produk ini');

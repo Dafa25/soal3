@@ -31,9 +31,10 @@
         $stmt->execute();
 
         if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<h2>" . $row['name_product'] . "</h2>";
-            echo "<p>Price: Rp" . $row['price'] . "</p>";
-            echo "<p>Description: " . $row['description'] . "</p>";
+            echo "<h2 class='mb-4 text-center'>" . $row['name_product'] . "</h2>";
+            echo '<img src="' . $row['image'] . '" alt="Gambar Barang" class="rounded mx-auto d-block mb-4" width="200" height="200">';
+            echo "<p class='mb-4 text-center'>Price: Rp" . $row['price'] . "</p>";
+            echo "<p class='mb-4'>Description: " . $row['description'] . "</p>";
         }
         ?>
     </div>
@@ -45,9 +46,9 @@
         $stmt->bindParam(':id', $product_id, PDO::PARAM_INT);
         $stmt->execute();
 
-        echo "<h3>Ulasan Pembeli:</h3>";
+        echo "<h3 class='mb-4'>Ulasan Pembeli:</h3>";
         while ($review = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<div class='card'>";
+            echo "<div class='card mb-3'>";
             echo "<div class='card-body'>";
             echo "<p class='card-text'>" . $review['review'] . "</p>";
             echo "</div>";
@@ -58,6 +59,6 @@
 
     <!-- Tambahkan skrip JavaScript Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
